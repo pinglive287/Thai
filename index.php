@@ -45,7 +45,7 @@
  define('THEMES', 'themes');
  
  // @default_controller
- define('DEFAULT_CONTROLLER', 'Thai');
+ define('DEFAULT_CONTROLLER', 'Thai_controller');
  
 /*
  *---------------------------------------------------------------

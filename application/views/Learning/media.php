@@ -194,7 +194,7 @@ body {
 <div class="container-fluid">
     <div class="row">
         <div class="col-6 text-center">
-            <a href="<?= site_url('Learning_media/suggestions') ?>">
+            <a href="<?= site_url('Learning_media_controller/suggestions') ?>">
                 <img src="<?= $themes ?>assets/images/thai/page2/btn-Suggestions.png" alt="" class="btn-Suggestions">
             </a><br>
             <a href="<?= $themes ?>assets/files/listening-and-reading.html">

@@ -94,7 +94,7 @@ body {
 <div class="container-fluid">
     <div class="row">
         <div class="col text-end">
-            <a href="<?= site_url('Learning_media/media') ?>"><img src="<?= $themes ?>assets/images/thai/page2/back.png" alt="" class="btn-back"></a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>"><img src="<?= $themes ?>assets/images/thai/page2/back.png" alt="" class="btn-back"></a>
             <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page2/close.png" alt="" class="btn-close"></a>
         </div>
     </div>

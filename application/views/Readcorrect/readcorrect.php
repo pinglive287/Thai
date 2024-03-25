@@ -110,21 +110,21 @@ body {
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-around top-150">
-                    <a href="<?= site_url('Readcorrectly/Exam/1') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-1.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/2') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-2.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/3') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-3.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/4') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-4.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/5') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-5.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/1') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-1.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/2') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-2.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/3') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-3.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/4') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-4.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/5') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-5.png" class="img-hover-effect btn-exam"></a>
                 </div>
                 <div class="col-1"></div>
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-around top-50">
-                    <a href="<?= site_url('Readcorrectly/Exam/6') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-6.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/7') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-7.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/8') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-8.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/9') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-9.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly/Exam/10') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-10.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/6') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-6.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/7') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-7.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/8') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-8.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/9') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-9.png" class="img-hover-effect btn-exam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/Exam/10') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-10.png" class="img-hover-effect btn-exam"></a>
                 </div>
                 <div class="col-1"></div>
             </div>

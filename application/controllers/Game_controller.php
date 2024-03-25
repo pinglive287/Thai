@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Readfluently extends CI_Controller
+class Game_controller extends CI_Controller
 {
     function __construct()
     {
@@ -13,7 +13,14 @@ class Readfluently extends CI_Controller
     public function index()
     {
 
-        $this->data['view_file'] = 'readfluently';
+        $this->data['view_file'] = 'Game/gamepage';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function Thaigame($ID)
+    {
+        
+        $this->data['view_file'] = 'Game/thaigame';
         $this->load->view(THEMES, $this->data);
     }
 }

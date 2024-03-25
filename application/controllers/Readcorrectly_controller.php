@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Thai extends CI_Controller
+class Readcorrectly_controller extends CI_Controller
 {
     function __construct()
     {
@@ -13,7 +13,15 @@ class Thai extends CI_Controller
     public function index()
     {
 
-        $this->data['view_file'] = 'firstpage';
+        $this->data['view_file'] = 'Readcorrect/readcorrect';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function Exam($ID)
+    {
+        $this->data['ID'] = $ID;
+
+        $this->data['view_file'] = 'Readcorrect/exam';
         $this->load->view(THEMES, $this->data);
     }
 }

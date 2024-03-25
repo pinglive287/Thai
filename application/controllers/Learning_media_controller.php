@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Learning_media extends CI_Controller
+class Learning_media_controller extends CI_Controller
 {
     function __construct()
     {
@@ -13,21 +13,21 @@ class Learning_media extends CI_Controller
     public function index()
     {
 
-        $this->data['view_file'] = 'learning-media';
+        $this->data['view_file'] = 'Learning/learning-media';
         $this->load->view(THEMES, $this->data);
     }
 
     public function media()
     {
 
-        $this->data['view_file'] = 'media';
+        $this->data['view_file'] = 'Learning/media';
         $this->load->view(THEMES, $this->data);
     }
 
     public function suggestions()
     {
 
-        $this->data['view_file'] = 'suggestions';
+        $this->data['view_file'] = 'Learning/suggestions';
         $this->load->view(THEMES, $this->data);
     }
 }

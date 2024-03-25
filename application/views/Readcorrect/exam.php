@@ -27,7 +27,7 @@ body {
     <div class="row">
         <div class="col mt-3">
             <div class="text-end" style="color: #8a603a;">
-                <a href="<?= site_url('Readcorrectly') ?>"><img src="<?= $themes ?>assets/images/thai/page3/home.png" width="60vh"
+                <a href="<?= site_url('Readcorrectly_controller') ?>"><img src="<?= $themes ?>assets/images/thai/page3/home.png" width="60vh"
                         class="img-hover-effect me-3"></a>
                 <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" width="50vh"
                         class="img-hover-effect"></a>
