@@ -19,7 +19,7 @@ class GameLearningThai_controller extends CI_Controller
 
     public function Thaigame($ID)
     {
-        
+        $this->data['Level'] = $ID;
         $this->data['view_file'] = 'Game_LearningThai/thaigame';
         $this->load->view(THEMES, $this->data);
     }

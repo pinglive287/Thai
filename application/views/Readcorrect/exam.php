@@ -38,16 +38,19 @@ body {
     <?php if ($this->data['ID'] == 1) :  ?>
     <div class="row">
         <div class="col text-center" style="margin-top: 110px">
-            <a href="#"><img src="<?= $themes ?>assets/images/thai/page3/btn-1.png" width="230vh"
-                    class="img-hover-effect me-3"></a>
+            <a href="#">
+                <img src="<?= $themes ?>assets/images/thai/page3/btn-1.png" width="230vh" class="img-hover-effect me-3">
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-6" style="padding-left: 240px; padding-top: 110px">
-            <a href="#"><img src="<?= $themes ?>assets/images/thai/page3/btn-vocab.png" width="600vh"
-                    class="img-hover-effect me-3"></a>
-            <a href="#"><img src="<?= $themes ?>assets/images/thai/page3/brn-exam.png" width="600vh"
-                    class="img-hover-effect me-3"></a>
+            <a href="<?= $themes ?>assets/files/Readcorrectly/Exam1/Vocabulary.html">
+                <img src="<?= $themes ?>assets/images/thai/page3/btn-vocab.png" width="600vh" class="img-hover-effect me-3">
+            </a>
+            <a href="<?= $themes ?>assets/files/Readcorrectly/Exam1/Quiz.html">
+                <img src="<?= $themes ?>assets/images/thai/page3/brn-exam.png" width="600vh" class="img-hover-effect me-3">
+            </a>
         </div>
         <div class="col-6" style="padding-left: 130px; padding-top: 110px">
             <a href="#"><img src="<?= $themes ?>assets/images/thai/page3/btn-gameread.png" width="600vh"

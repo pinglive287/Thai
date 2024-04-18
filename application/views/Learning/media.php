@@ -197,13 +197,15 @@ body {
             <a href="<?= site_url('Learning_media_controller/suggestions') ?>">
                 <img src="<?= $themes ?>assets/images/thai/page2/btn-Suggestions.png" alt="" class="btn-Suggestions">
             </a><br>
-            <a href="<?= $themes ?>assets/files/listening-and-reading.html">
+            <a href="<?= site_url('Learning_media_controller/explanation') ?>">
                 <img src="<?= $themes ?>assets/images/thai/page2/btn-listenread.png" alt="" class="btn-listenread">
             </a><br>
-            <a href="<?= $themes ?>assets/files/Reading.html">
+            <a href="<?= $themes ?>assets/files/SpellTheWord/Reading.html">
                 <img src="<?= $themes ?>assets/images/thai/page2/btn-read.png" alt="" class="btn-read">
             </a><br>
-            <img src="<?= $themes ?>assets/images/thai/page2/btn-write.png" alt="" class="btn-write">
+            <a href="<?= $themes ?>assets/files/SpellTheWord/Write.html">
+                <img src="<?= $themes ?>assets/images/thai/page2/btn-write.png" alt="" class="btn-write">
+            </a>
         </div>
         <div class="col-6">
             <div class="row">

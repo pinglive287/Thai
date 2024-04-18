@@ -14,15 +14,15 @@ define('KEYWORDS_NAME', 'Thai LANGUAGE');
 // @show data list per page
 define('PER_PAGE', 100);
 
-define('DB_HOST', '203.170.190.225');
-define('DB_UID', 'sa');
-define('DB_PASSWORD', 'modeP@ssw0rd');
-define('DB_NAME', 'SPL_modedata_web');
+// define('DB_HOST', '203.170.190.225');
+// define('DB_UID', 'sa');
+// define('DB_PASSWORD', 'modeP@ssw0rd');
+// define('DB_NAME', 'SPL_modedata_web');
 
-// define('DB_HOST', 'localhost');
-// define('DB_UID', 'root');
-// define('DB_PASSWORD', '');
-// define('DB_NAME', 'test');
+define('DB_HOST', 'localhost');
+define('DB_UID', 'root');
+define('DB_PASSWORD', '');
+define('DB_NAME', 'test');
 
 // @application environment
  define('ENVIRONMENT', 'development');
