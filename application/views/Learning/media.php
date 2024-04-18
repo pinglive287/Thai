@@ -200,7 +200,7 @@ body {
             <a href="<?= site_url('Learning_media_controller/explanation') ?>">
                 <img src="<?= $themes ?>assets/images/thai/page2/btn-listenread.png" alt="" class="btn-listenread">
             </a><br>
-            <a href="<?= $themes ?>assets/files/SpellTheWord/Reading.html">
+            <a href="<?= site_url('Learning_media_controller/reading') ?>">
                 <img src="<?= $themes ?>assets/images/thai/page2/btn-read.png" alt="" class="btn-read">
             </a><br>
             <a href="<?= $themes ?>assets/files/SpellTheWord/Write.html">
