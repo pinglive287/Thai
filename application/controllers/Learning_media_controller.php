@@ -6,7 +6,6 @@ class Learning_media_controller extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->database();
         $this->load->helper(array('form', 'url', 'text'));
     }
 
@@ -38,10 +37,34 @@ class Learning_media_controller extends CI_Controller
         $this->load->view(THEMES, $this->data);
     }
 
-    public function Choose()
+    public function Choose($ID)
     {
+        $this->data['ID'] = $ID;
 
         $this->data['view_file'] = 'Learning/choose';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function Reading()
+    {
+
+        $this->data['view_file'] = 'Learning/reading';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function Practice_reading($ID)
+    {
+        $this->data['ID'] = $ID;
+
+        $this->data['view_file'] = 'Learning/practice-reading';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function Reading_Choose($ID)
+    {
+        $this->data['ID'] = $ID;
+        
+        $this->data['view_file'] = 'Learning/reading-choose';
         $this->load->view(THEMES, $this->data);
     }
 }

@@ -13,9 +13,10 @@ body {
 }
 
 .btn-start {
-    margin-right: 10px;
+    margin-bottom: 2vh;
+    margin-right: 5vh;
     width: 40vh;
-    height: 15vh;
+    height: 17vh;
     opacity: 1;
     transition: transform 0.3s ease-in-out;
 }
@@ -28,9 +29,11 @@ body {
 </style>
 
 <div class="container-fluid">
-    <div class="row justify-content-end align-items-end" style="height: 97vh;">
+    <div class="row justify-content-end align-items-end" style="height: 100vh;">
         <div class="col-auto">
-            <a href="<?= site_url('Learning_media_controller/Choose') ?>"><img src="<?= $themes ?>assets/images/thai/page2/btn-start.png" alt="" class="btn-start"></a>
+            <a href="<?= site_url('Learning_media_controller/Choose/1') ?>">
+                <img src="<?= $themes ?>assets/images/thai/page2/btn-start.png" alt="" class="btn-start">
+            </a>
         </div>
     </div>
 </div>
