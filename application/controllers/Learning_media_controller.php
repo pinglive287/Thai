@@ -37,4 +37,11 @@ class Learning_media_controller extends CI_Controller
         $this->data['view_file'] = 'Learning/explanation';
         $this->load->view(THEMES, $this->data);
     }
+
+    public function Choose()
+    {
+
+        $this->data['view_file'] = 'Learning/choose';
+        $this->load->view(THEMES, $this->data);
+    }
 }
