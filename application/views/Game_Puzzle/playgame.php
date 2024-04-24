@@ -25,7 +25,7 @@ body {
 
 .frame-answer {
     margin-top: 3vh;
-    margin-left: 20vh;
+    margin-left: 21vh;
     margin-right: 1vh;
     height: 15vh;
     text-align: center;
@@ -196,16 +196,13 @@ body {
             <div class="row">
                 <div class="col">
                     <div class="frame-title">
-                        <h1 style="font-weight: bold;">เลือกเติมคำในช่องว่างให้ได้ใจความเหมาะสม
-                            "น้อยหน่า.................เสื้อและกางเกงใหม่"</h1>
+                        <h1 style="font-family: niramit; font-size: 48px;" id="questionTitle"></h1>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <div class="frame-answer">
-                        <span class="answer"></span>
-                        <span class="answer"></span>
                         <span class="answer"></span>
                     </div>
                 </div>
@@ -394,3 +391,32 @@ body {
         </div>
     </div>
 </div>
+
+<script src="<?= $themes ?>assets/files/Question/PuzzleQuiz.js"></script>
+
+<script>
+$(document).ready(function() {
+    Question();
+});
+
+function Question() {
+    var randomIndex = Math.floor(Math.random() * questions.length);
+    var selectedQuestion = questions[randomIndex];
+
+    var questionTitleElement = document.getElementById('questionTitle');
+    questionTitleElement.innerHTML = selectedQuestion.Title;
+
+    var correctAnswer = selectedQuestion.correct;
+    var hiddenAnswer = '';
+    for (var i = 0; i < correctAnswer.length; i++) {
+        if (correctAnswer[i] === ' ') {
+            hiddenAnswer += ' '; 
+        } else {
+            hiddenAnswer += '<span class="answer"></span>'; 
+        }
+    }
+
+    document.querySelector('.frame-answer').innerHTML = hiddenAnswer;
+}
+
+</script>

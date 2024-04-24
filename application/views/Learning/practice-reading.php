@@ -5,7 +5,7 @@ $themes = base_url();
 
 <style>
 body {
-    background-image: url("<?= $themes ?>assets/images/thai/page2/bg-practice-read.png");
+    background-image: url("<?= $themes ?>assets/images/thai/page2/bg-practice-read.jpg");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;

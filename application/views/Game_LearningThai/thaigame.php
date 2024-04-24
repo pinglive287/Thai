@@ -112,12 +112,17 @@ body {
 }
 
 .boat {
-    width: 200vh;
-    height: 25vh;
-    left: 0;
-    top: 75vh;
+    width: 23vh;
+    height: 13vh;
+    left: 85%;  top: 80vh;
     position: absolute;
     z-index: -1;
+    animation: moveBoat 30s linear infinite;
+}
+
+@keyframes moveBoat {
+    0% { left: 85%; }
+    100% { left: 0; }
 }
 
 .bg-opacity {
@@ -188,7 +193,7 @@ body {
         <div class="col-md-1">
             <div class="row">
                 <div class="col">
-                    <img src="<?= $themes ?>assets/images/thai/page5/boat.gif" class="boat">
+                    <img src="<?= $themes ?>assets/images/thai/page5/boat.png" class="boat">
                 </div>
             </div>
         </div>
@@ -276,6 +281,10 @@ function Question() {
     questionContainer.innerHTML = html;
 
     startCountdown();
+
+    document.querySelector(".boat").style.animation = "none";  
+    document.querySelector(".boat").offsetHeight; 
+    document.querySelector(".boat").style.animation = "moveBoat 30s linear infinite"; 
 
     if (isFirstLoad) {
         var clauseElement = document.querySelector(".txt-clause");

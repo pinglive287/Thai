@@ -5,7 +5,7 @@ $themes = base_url();
 
 <style>
 body {
-    background-image: url("<?= $themes ?>assets/images/thai/page2/bg-explanation-read.png");
+    background-image: url("<?= $themes ?>assets/images/thai/page2/bg-explanation-read.jpg");
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@ body {
 }
 
 .btn-next-read {
-    margin-right: 15vh;
+    margin-right: 14vh;
     width: 32vh;
     height: 14vh;
     opacity: 1;
