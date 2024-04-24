@@ -11,6 +11,20 @@
         font-weight: normal;
         font-style: normal;
     }
+
+    @font-face {
+        font-family: 'niramit';
+        src: url('./Font-Niramit/TH-Niramit-AS-Bold.ttf') format('truetype'); 
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'niramit-nm';
+        src: url('./Font-Niramit/TH-Niramit-AS.ttf') format('truetype'); 
+        font-weight: normal;
+        font-style: normal;
+    }
     /* Navbar */
     
     .header-background {

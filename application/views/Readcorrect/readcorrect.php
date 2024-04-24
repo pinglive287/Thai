@@ -130,7 +130,7 @@ body {
             </div>
             <div class="row">
                 <div class="col d-flex justify-content-center top-100">
-                    <a href="#"><img src="<?= $themes ?>assets/images/thai/page3/btn-allexam.png" class="img-hover-effect btn-allexam"></a>
+                    <a href="<?= site_url('Readcorrectly_controller/ExamTreasury') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-allexam.png" class="img-hover-effect btn-allexam"></a>
                 </div>
                 <div class="col-1"></div>
             </div>

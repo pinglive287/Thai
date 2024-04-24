@@ -10,6 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    
 }
 
 .btn-close {
@@ -23,16 +24,6 @@ body {
 .btn-close:hover {
     cursor: pointer;
     transform: scale(1.1);
-}
-
-.choose {
-    width: 30vh;
-    height: 11vh;
-}
-
-.choose:hover {
-    cursor: pointer;
-    opacity: 0.5;
 }
 
 img.choose.active {
@@ -49,6 +40,33 @@ img.choose.active {
     cursor: pointer;
     transform: scale(1.1);
 }
+
+.choose {
+    width: 28vh; 
+    height: 9vh; 
+    background-color: #e1f3ff;
+    border-radius: 50px; 
+    box-shadow: 2px 5px 5px #8ccbee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    color: #26719b;
+    font-size: 48px;
+    font-family: "niramit";
+}
+
+.choose.active {
+    cursor: pointer;
+    background-color: #a4dfff;
+    color: #26719b;
+}
+
+.choose:hover {
+    cursor: pointer;
+    background-color: #a4dfff;
+    color: #26719b;
+}
 </style>
 
 
@@ -62,24 +80,12 @@ img.choose.active {
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 15vh;">
-            <a href="<?= site_url('Learning_media_controller/Practice_reading/1') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/practice-read/choose1.png" alt="" class="choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/Practice_reading/2') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/practice-read/choose2.png" alt="" class="choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/Practice_reading/3') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/practice-read/choose3.png" alt="" class="choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/Practice_reading/4') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/practice-read/choose4.png" alt="" class="choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/Practice_reading/5') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/practice-read/choose5.png" alt="" class="choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/Practice_reading/6') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/practice-read/choose6.png" alt="" class="choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/Practice_reading/1') ?>" class="choose">ชุดที่ ๑ - ๑o</a>
+            <a href="<?= site_url('Learning_media_controller/Practice_reading/2') ?>" class="choose">ชุดที่ ๑๑ - ๒o</a>
+            <a href="<?= site_url('Learning_media_controller/Practice_reading/3') ?>" class="choose">ชุดที่ ๒๑ - ๓o</a>
+            <a href="<?= site_url('Learning_media_controller/Practice_reading/4') ?>" class="choose">ชุดที่ ๓๑ - ๔o</a>
+            <a href="<?= site_url('Learning_media_controller/Practice_reading/5') ?>" class="choose">ชุดที่ ๔๑ - ๕o</a>
+            <a href="<?= site_url('Learning_media_controller/Practice_reading/6') ?>" class="choose">ชุดที่ ๕๑ - ๖o</a>
         </div>
     </div>
 
@@ -321,19 +327,18 @@ img.choose.active {
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var currentUrl = window.location.href;
-        var chooseImages = document.querySelectorAll(".choose");
-        chooseImages.forEach(function(image) {
-            if (currentUrl.includes("/Practice_reading/")) {
-                var currentNumber = currentUrl.split("/").pop();
-                var linkNumber = image.parentElement.getAttribute("href").split("/").pop();
-                if (currentNumber === linkNumber) {
-                    image.classList.add("active");
-                }
-            }
-        });
+document.addEventListener("DOMContentLoaded", function() {
+    var currentUrl = window.location.href;
+    var chooseLinks = document.querySelectorAll(".choose");
+
+    chooseLinks.forEach(function(link) {
+        var linkUrl = link.getAttribute("href");
+        
+        if (currentUrl.includes(linkUrl)) {
+            link.classList.add("active");
+        }
     });
+});
 </script>
 
 

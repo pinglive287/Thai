@@ -10,6 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
+    font-family: "niramit";
 }
 
 .btn-close {
@@ -38,8 +39,18 @@ body {
 }
 
 .btn-choose {
-    width: 30vh;
-    height: 11vh;
+    width: 28vh; 
+    height: 10vh; 
+    background-color: #d8a53f;
+    border-radius: 50px; 
+    border: solid 5px white;
+    box-shadow: 2px 2px 5px #b9b9b9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none; 
+    color: white;
+    font-size: 52px;
 }
 
 .btn-choose:hover {
@@ -83,112 +94,52 @@ body {
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 12vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose1.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose6.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose11.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose16.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose21.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose26.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๖</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๑</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๖</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๑</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๖</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose2.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose7.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose12.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose17.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose22.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose27.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๗</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๒</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๗</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๒</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๗</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose3.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose8.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose13.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose18.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose23.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose28.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๘</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๓</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๘</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๓</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๘</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose4.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose9.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose14.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose19.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose24.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose29.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๙</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๔</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๘</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๔</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๙</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose5.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose10.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose15.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose20.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose25.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose30.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑o</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๑๕</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒o</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๒๕</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓o</a>
         </div>
     </div>
     <div class="row mt-3">
@@ -218,112 +169,52 @@ body {
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 12vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose1.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose2.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose3.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose4.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose5.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose6.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๑</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๖</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๑</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๖</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๑</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๖</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose2.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose7.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose12.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose17.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose22.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose27.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๒</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๗</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๒</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๗</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๒</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๗</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose3.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose8.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose13.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose18.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose23.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose28.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๓</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๘</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๓</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๘</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๓</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๘</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose4.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose9.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose14.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose19.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose24.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose29.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๔</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๙</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๔</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๙</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๔</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๙</a>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12 d-flex justify-content-around" style="margin-top: 2vh;">
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose5.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose10.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose15.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose20.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose25.png" alt="" class="btn-choose">
-            </a>
-            <a href="<?= site_url('Learning_media_controller/media') ?>">
-                <img src="<?= $themes ?>assets/images/thai/page2/choose/btn-choose30.png" alt="" class="btn-choose">
-            </a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๓๕</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔o</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๔๕</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕o</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๕๕</a>
+            <a href="<?= site_url('Learning_media_controller/media') ?>" class="btn-choose">ชุด ๖o</a>
         </div>
     </div>
     <div class="row mt-3">
