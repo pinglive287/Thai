@@ -13,6 +13,20 @@ body {
     height: 100vh;
 }
 
+.btn-start {
+    width: 30vh;
+    height: 30vh;
+    top: 30%;
+    left: 40%;
+    position: absolute;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-start:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .btn-exit {
     margin-top: 5vh;
     margin-right: 8vh;
@@ -52,6 +66,15 @@ body {
     position: absolute;
 }
 
+.txt-level {
+    color: #fff;
+    font-size: 52px;
+    font-family: 'Sarabun', sans-serif;
+    top: 5vh;
+    left: 40%;
+    position: absolute;
+}
+
 .txt-clause {
     color: #fff;
     font-size: 36px;
@@ -67,7 +90,8 @@ body {
     font-family: 'Sarabun', sans-serif;
     width: 50px;
     text-align: center;
-    margin: 5vh 0 0 53vh;
+    top: 5vh;
+    right: 44vh;
     position: absolute;
 }
 
@@ -168,18 +192,49 @@ body {
     opacity: 0.5;
     pointer-events: none; 
 }
-</style>
 
+#question-container {
+    display: none; 
+}
+
+#question-container.show {
+    display: block;
+}
+
+#question-container-start.remove {
+    display: none;
+}
+
+#btn-start.remove{
+    display: none;
+}
+</style>
+<?php 
+    if($this->data['Level'] == 1) {
+        $Level = '๑';
+    } elseif ($this->data['Level'] == 2) {
+        $Level = '๒';
+    } elseif ($this->data['Level'] == 3) {
+        $Level = '๓';
+    } elseif ($this->data['Level'] == 4) {
+        $Level = '๔';
+    } elseif ($this->data['Level'] == 5) {
+        $Level = '๕';
+    } elseif ($this->data['Level'] == 6) {
+        $Level = '๖';
+    }
+?>
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 d-flex">
             <img src="<?= $themes ?>assets/images/thai/page5/logo.gif" class="score-logo">
             <p class="txt-score">0/100</p>
+            <p class="txt-level">ระดับที่ <?= $Level ?></p>
         </div>
         <div class="col-md-6 text-end">
             <p class="txt-clause">0/10</p>
             <p class="txt-time"></p>
-            <a href="<?= site_url('GameLearningThai_controller') ?>"><img src="<?= $themes ?>assets/images/thai/page5/home.png"
+            <a href="<?= site_url('GameLearningThai_controller/Level') ?>"><img src="<?= $themes ?>assets/images/thai/page5/home.png"
                     alt="" class="btn-home"></a>
             <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" alt=""
                     class="btn-exit"></a>
@@ -188,7 +243,36 @@ body {
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-8 text-center" id="question-container">
-
+            
+        </div>
+        <div class="col-md-8 text-center" id="question-container-start">
+            <div class="title-container">
+                <img src="<?= $themes ?>assets/images/thai/page5/title.png" class="title">
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="title-container" id="answer1">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="title-container" id="answer2">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="title-container" id="answer3">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="title-container" id="answer4">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-md-1">
             <div class="row">
@@ -207,6 +291,7 @@ body {
             <source src="<?= $themes ?>assets/sounds/correct.mp3" type="audio/mpeg">
         </audio>
     </div>
+    <img src="<?= $themes ?>assets/images/thai/page5/btn-start.png" class="btn-start" id="btn-start">
 </div>
 <script src="<?= $themes ?>assets/files/Question/questionFile.js"></script>
 
@@ -230,11 +315,16 @@ var randomQuestion;
 var isFirstLoad = true;
 
 $(document).ready(function() {
-    Question();
+    document.getElementById("btn-start").addEventListener("click", function() {
+        document.getElementById("question-container").classList.add("show");
+        document.getElementById("question-container-start").classList.add("remove");
+        document.getElementById("btn-start").classList.add("remove");
+        Question();
+    });
 });
 
 function Question() {
-
+    
     if (questions.length === 0) {
         window.location.href = "<?= site_url('GameLearningThai_controller') ?>";
         return; 
@@ -251,50 +341,61 @@ function Question() {
         </div>
         <div class="row mt-4">
             <div class="col">
-                <div class="title-container" id="answer1" onclick="playCorrectSound(1, ${randomQuestion.correct})">
-                    <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
-                    <div class="choice-text">${randomQuestion.choice1}</div>
+                <div class="title-container">
+                    <span class="answercheck" id="answer1" onclick="playCorrectSound(1, ${randomQuestion.correct})">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                        <div class="choice-text">${randomQuestion.choice1}</div>
+                    </span>
                 </div>
             </div>
             <div class="col">
-                <div class="title-container" id="answer2" onclick="playCorrectSound(2, ${randomQuestion.correct})">
-                    <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
-                    <div class="choice-text">${randomQuestion.choice2}</div>
+                <div class="title-container">
+                    <span class="answercheck" id="answer2" onclick="playCorrectSound(2, ${randomQuestion.correct})">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                        <div class="choice-text">${randomQuestion.choice2}</div>
+                    </span>
                 </div>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col">
-                <div class="title-container" id="answer3" onclick="playCorrectSound(3, ${randomQuestion.correct})">
-                    <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
-                    <div class="choice-text">${randomQuestion.choice3}</div>
+                <div class="title-container">
+                    <span class="answercheck" id="answer3" onclick="playCorrectSound(3, ${randomQuestion.correct})">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                        <div class="choice-text">${randomQuestion.choice3}</div>
+                    </span>
                 </div>
             </div>
             <div class="col">
-                <div class="title-container" id="answer4" onclick="playCorrectSound(4, ${randomQuestion.correct})">
-                    <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
-                    <div class="choice-text">${randomQuestion.choice4}</div>
+                <div class="title-container">
+                    <span class="answercheck" id="answer4" onclick="playCorrectSound(4, ${randomQuestion.correct})">
+                        <img src="<?= $themes ?>assets/images/thai/page5/choice.png" class="choice">
+                        <div class="choice-text">${randomQuestion.choice4}</div>
+                    </span>
                 </div>
             </div>
         </div>
     `;
-    questionContainer.innerHTML = html;
+    
 
     startCountdown();
 
     document.querySelector(".boat").style.animation = "none";  
     document.querySelector(".boat").offsetHeight; 
     document.querySelector(".boat").style.animation = "moveBoat 30s linear infinite"; 
-
+    
     if (isFirstLoad) {
         var clauseElement = document.querySelector(".txt-clause");
         var currentClause = parseInt(clauseElement.innerText.split('/')[0]);
         var clause = currentClause + 1;
-        clauseElement.innerText = clause + "/10";
-    }
-
-    if (clause > 10) {
-        window.location.href = "<?= site_url('GameLearningThai_controller') ?>";
+        if (clause > 10) {
+            var scoreElement = document.querySelector(".txt-score");
+            var currentScore = parseInt(scoreElement.innerText.split('/')[0]);
+            window.location.href = "<?= site_url('GameLearningThai_controller/Score_summary') ?>"+ "?score=" + currentScore;
+        } else {
+            clauseElement.innerText = clause + "/10";
+            questionContainer.innerHTML = html;
+        }
     }
 }
 
@@ -305,7 +406,7 @@ var answerCount = 0;
 function playCorrectSound(answer, correct) {
     var correctAnswer = document.getElementById("answer" + answer);
     var scoreElement = document.querySelector(".txt-score");
-    
+  
     if (answer === correct) {
         var audio = new Audio("<?= $themes ?>assets/sounds/correct.mp3");
         audio.play();
@@ -348,7 +449,7 @@ function playCorrectSound(answer, correct) {
     answerCount++;
     if (allowMultipleAnswers && answerCount < 2) {
         if (answerCount === 1 && answer === correct) {
-            var answers = document.querySelectorAll(".title-container");
+            var answers = document.querySelectorAll(".answercheck");
             answers.forEach(function(answerElement) {
                 answerElement.onclick = null;
             });
@@ -360,13 +461,14 @@ function playCorrectSound(answer, correct) {
         }
        
     } else {
-        var answers = document.querySelectorAll(".title-container");
+        var answers = document.querySelectorAll(".answercheck");
         answers.forEach(function(answerElement) {
             answerElement.onclick = null;
         });
         setTimeout(function() {
             answerCount = 0;
             isFirstLoad = true;
+            allowMultipleAnswers = false;
             Question();
         }, 1500);
     }
