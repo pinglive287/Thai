@@ -114,14 +114,15 @@ body {
 .boat {
     width: 23vh;
     height: 13vh;
-    left: 85%;  top: 80vh;
+    left: 75%;  
+    top: 80vh;
     position: absolute;
     z-index: -1;
     animation: moveBoat 30s linear infinite;
 }
 
 @keyframes moveBoat {
-    0% { left: 85%; }
+    0% { left: 75%; }
     100% { left: 0; }
 }
 
@@ -198,7 +199,7 @@ body {
             </div>
         </div>
         <div class="col-md-2 text-end">
-            <img src="<?= $themes ?>assets/images/thai/page5/bg-opacity.png" class="bg-opacity">
+            <!-- <img src="<?= $themes ?>assets/images/thai/page5/bg-opacity.png" class="bg-opacity"> -->
             <img src="<?= $themes ?>assets/images/thai/page5/answer.png" class="answer disabled" onclick="autoAnswer()">
             <img src="<?= $themes ?>assets/images/thai/page5/two.png" class="two-time disabled" onclick="doubleAnswer()">
             <img src="<?= $themes ?>assets/images/thai/page5/change.png" class="change disabled" onclick="changeQuestion()">
