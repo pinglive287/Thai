@@ -20,6 +20,7 @@ body {
     left: 40%;
     position: absolute;
     transition: transform 0.3s ease-in-out;
+    z-index: 1;
 }
 
 .btn-start:hover {
@@ -91,7 +92,7 @@ body {
     width: 50px;
     text-align: center;
     top: 5vh;
-    right: 44vh;
+    right: 42vh;
     position: absolute;
 }
 
@@ -150,15 +151,6 @@ body {
     100% { left: 0; }
 }
 
-.bg-opacity {
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100vh;
-    position: absolute;
-    z-index: -1;
-}
-
 .answer {
     width: 20vh;
     transition: transform 0.3s ease-in-out;
@@ -209,6 +201,7 @@ body {
 #btn-start.remove{
     display: none;
 }
+
 </style>
 <?php 
     if($this->data['Level'] == 1) {
@@ -225,6 +218,7 @@ body {
         $Level = '๖';
     }
 ?>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6 d-flex">
@@ -235,7 +229,7 @@ body {
         <div class="col-md-6 text-end">
             <p class="txt-clause">0/10</p>
             <p class="txt-time"></p>
-            <a href="<?= site_url('GameLearningThai_controller/Level') ?>"><img src="<?= $themes ?>assets/images/thai/page5/home.png"
+            <a href="#" id="home"><img src="<?= $themes ?>assets/images/thai/page5/home.png"
                     alt="" class="btn-home"></a>
             <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" alt=""
                     class="btn-exit"></a>
@@ -246,7 +240,7 @@ body {
         <div class="col-md-8 text-center" id="question-container">
             
         </div>
-        <div class="col-md-8 text-center" id="question-container-start">
+        <div class="col-md-8 text-center" id="question-container-start" style="opacity: 0.5;">
             <div class="title-container">
                 <img src="<?= $themes ?>assets/images/thai/page5/title.png" class="title">
             </div>
@@ -283,7 +277,6 @@ body {
             </div>
         </div>
         <div class="col-md-2 text-end">
-            <!-- <img src="<?= $themes ?>assets/images/thai/page5/bg-opacity.png" class="bg-opacity"> -->
             <img src="<?= $themes ?>assets/images/thai/page5/answer.png" class="answer disabled" onclick="autoAnswer()">
             <img src="<?= $themes ?>assets/images/thai/page5/two.png" class="two-time disabled" onclick="doubleAnswer()">
             <img src="<?= $themes ?>assets/images/thai/page5/change.png" class="change disabled" onclick="changeQuestion()">
@@ -392,13 +385,17 @@ function Question() {
         if (clause > 10) {
             var scoreElement = document.querySelector(".txt-score");
             var currentScore = parseInt(scoreElement.innerText.split('/')[0]);
-            window.location.href = "<?= site_url('GameLearningThai_controller/Score_summary') ?>"+ "?score=" + currentScore;
+            var urlParams = new URLSearchParams(window.location.search);
+            var No = urlParams.get('No');
+            var url = "<?= site_url('GameLearningThai_controller/Score_summary/') ?>" + No + "?score=" + currentScore;
+            window.location.href = url;
         } else {
             clauseElement.innerText = clause + "/10";
             questionContainer.innerHTML = html;
         }
     }
 }
+
 
 //------------เช็คข้อถูก ข้อผิด-------------//
 var allowMultipleAnswers = false;
@@ -548,4 +545,16 @@ function startCountdown() {
         }
     }, 1000);
 }
+
+function goToSummary() {
+    var url = "<?= site_url('GameLearningThai_controller/Score_summary/') ?>" + No + "?score=" + currentScore;
+     window.location.href = url;
+}
+
+document.getElementById('home').addEventListener('click', function(event) {
+    var urlParams = new URLSearchParams(window.location.search);
+    var No = urlParams.get('No');
+    var url = "<?= site_url('GameLearningThai_controller/Level?No=') ?>" + No;
+    window.location.href = url;
+});
 </script>

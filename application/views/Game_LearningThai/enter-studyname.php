@@ -78,43 +78,111 @@ body {
     cursor: pointer;
     transform: scale(1.1);
 }
+
+.tbodyDiv {
+    max-height: 600px;
+    overflow: auto;
+}
 </style>
 
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6"></div>
         <div class="col-md-6 text-end">
-            <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" alt="" class="btn-exit"></a>
+            <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" alt=""
+                    class="btn-exit"></a>
         </div>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center align-items-center" style="margin-top: 25vh">
             <span class="title">กรอกชื่อ - นามสกุล</span>
-            <img src="<?= $themes ?>assets/images/thai/page5/btn-search.png" alt="" class="btn-search">
+            <img src="<?= $themes ?>assets/images/thai/page5/btn-search.png" alt="" class="btn-search"
+                data-toggle="modal" data-target="#Search">
         </div>
     </div>
-    <div class="row">
-        <div class="col d-flex justify-content-center align-items-center" style="margin-top: 3vh">
-            <input type="text" class="input-form" value="" placeholder="กรอกรหัสประจําตัว">
+    <form method="post" action="<?= site_url('GameLearningThai_controller/study') ?>" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center" style="margin-top: 3vh">
+                <input type="text" class="input-form" id="No" name="No" value="<?= isset($this->data['StudentNo']) ? $this->data['StudentNo'] : '' ?>" placeholder="กรอกรหัสประจําตัว">
+            </div>
         </div>
-    </div>
+    </form>
     <div class="row">
         <div class="col d-flex justify-content-center align-items-center" style="margin-top: 3vh">
-            <span class="name">ชื่อ - นามสกุล : ด.ช. โมด โซลูชัน</span>
+            <span class="name" id="fullname">ชื่อ - นามสกุล : <?= isset($this->data['FullName']) ? $this->data['FullName'] : '' ?></span>
         </div>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center align-items-center">
-            <span class="name">ชั้น : อนุบาล ๓</span>
+            <span class="name" id="class">ชั้น : <?= isset($this->data['ClassYear']) ? $this->data['ClassYear'] : '' ?></span>
         </div>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center align-items-center">
-            <a href="<?= site_url('GameLearningThai_controller/Level') ?>">
+            <a href="#" id="confirm">
                 <img src="<?= $themes ?>assets/images/thai/page5/btn-confirm.png" alt="" class="btn-confirm">
             </a>
         </div>
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="Search" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold fs-3" id="exampleModalLongTitle">สืบค้นข้อมูล</h5>
+            </div>
+            <div class="modal-body tbodyDiv">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr class="text-center">
+                            <th width="200px"><span class="fs-5">รหัสประจำตัว</span></th>
+                            <th><span class="fs-5">ชื่อ - นามสกุล</span></th>
+                            <th width="100px"><span class="fs-5">ชั้น</span></th>
+                            <th width="100px"><span class="fs-5">เลือก</span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <?php foreach ($Student as $row) { ?>
+                            <tr>
+                                <td class="text-center"><span class="fs-4"><?= $row->StudentNo ?></span></td>
+                                <td><span class="fs-4"><?= $row->FullName ?></span></td>
+                                <td class="text-center"><span class="fs-4"><?= $row->ClassYear ?></span></td>
+                                <td class="text-center">
+                                    <button class="btn btn-primary fw-bold fs-5" data-dismiss="modal" onclick="selectStudent('<?= $row->StudentNo ?>','<?= $row->FullName ?>','<?= $row->ClassYear ?>')">เลือก</button>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary fs-5" data-dismiss="modal">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script>
+function selectStudent(studentNo, FullName, ClassYear) {
+    document.querySelector('.input-form').value = studentNo;
+    document.getElementById('fullname').innerText = 'ชื่อ - นามสกุล : ' + FullName;
+    document.getElementById('class').innerText = 'ชั้น : ' + ClassYear;
+}
 
+document.getElementById('confirm').addEventListener('click', function(event) {
+    var studentNo = document.getElementById('No').value;
+    if (studentNo === '') {
+        alert('กรุณากรอกรหัสประจำตัวนักเรียน');
+        event.preventDefault();
+    } else {
+        var studentNo = document.getElementById('No').value;
+        var url = "<?= site_url('GameLearningThai_controller/Level?No=') ?>" + studentNo;
+        window.location.href = url;
+    }
+});
+
+
+</script>

@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-$themes =  base_url();
+$themes = base_url();
 ?>
 <!DOCTYPE html>
 <html lang="th">

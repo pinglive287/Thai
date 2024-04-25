@@ -86,19 +86,19 @@ body {
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 d-flex justify-content-around" style="margin-top: 35vh">
-            <a href="<?= site_url('GameLearningThai_controller/rules/1') ?>" style="text-decoration: none; color: #8c6239;">
+            <a href="#" onclick="appendNoParam(1)" style="text-decoration: none; color: #8c6239;">
                 <div class="choice active">
                     <img src="<?= $themes ?>assets/images/thai/page5/bullet.png" width="70vh">
                     <span >ระดับ 1</span>
                 </div>
             </a>
-            <a href="<?= site_url('GameLearningThai_controller/rules/2') ?>" style="text-decoration: none; color: #8c6239;">
+            <a href="#"  onclick="appendNoParam(2)" style="text-decoration: none; color: #8c6239;">
                 <div class="choice">
                     <img src="<?= $themes ?>assets/images/thai/page5/bullet.png" width="70vh">
                     <span >ระดับ 2</span>
                 </div>
             </a>
-            <a href="<?= site_url('GameLearningThai_controller/rules/3') ?>" style="text-decoration: none; color: #8c6239;">
+            <a href="#" onclick="appendNoParam(3)" style="text-decoration: none; color: #8c6239;">
                 <div class="choice">
                     <img src="<?= $themes ?>assets/images/thai/page5/bullet.png" width="70vh">
                     <span >ระดับ 3</span>
@@ -110,19 +110,19 @@ body {
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8 d-flex justify-content-around" style="margin-top: 10vh">
-            <a href="<?= site_url('GameLearningThai_controller/rules/4') ?>" style="text-decoration: none; color: #8c6239;">
+            <a href="#" onclick="appendNoParam(4)" style="text-decoration: none; color: #8c6239;">
                 <div class="choice">
                     <img src="<?= $themes ?>assets/images/thai/page5/bullet.png" width="70vh">
                     <span >ระดับ 4</span>
                 </div>
             </a>
-            <a href="<?= site_url('GameLearningThai_controller/rules/5') ?>" style="text-decoration: none; color: #8c6239;">
+            <a href="#" onclick="appendNoParam(5)" style="text-decoration: none; color: #8c6239;">
                 <div class="choice">
                     <img src="<?= $themes ?>assets/images/thai/page5/bullet.png" width="70vh">
                     <span >ระดับ 5</span>
                 </div>
             </a>
-            <a href="<?= site_url('GameLearningThai_controller/rules/6') ?>" style="text-decoration: none; color: #8c6239;">
+            <a href="#" onclick="appendNoParam(6)" style="text-decoration: none; color: #8c6239;">
                 <div class="choice">
                     <img src="<?= $themes ?>assets/images/thai/page5/bullet.png" width="70vh">
                     <span >ระดับ 6</span>
@@ -132,3 +132,13 @@ body {
         <div class="col-md-2"></div>
     </div>
 </div>
+
+<script>
+     function appendNoParam(level) {
+        var urlParams = new URLSearchParams(window.location.search);
+        var No = urlParams.get('No');
+        var url = "<?= site_url('GameLearningThai_controller/rules/') ?>" + level + "?No=" + No;
+        window.location.href = url;
+    }
+   
+</script>

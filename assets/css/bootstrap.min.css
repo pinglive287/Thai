@@ -1890,7 +1890,7 @@ progress {
 
 .table>thead {
     vertical-align: bottom;
-    background-color: #b7ddc2;
+    background-color: #ffeed4;
 }
 
 .table>:not(:first-child) {

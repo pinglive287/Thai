@@ -58,17 +58,33 @@ body {
     <div class="row">
         <div class="col-md-6"></div>
         <div class="col-md-6 text-end">
-            <a href="<?= site_url('GameLearningThai_controller/Level') ?>"><img src="<?= $themes ?>assets/images/thai/page5/home.png"alt="" class="btn-home"></a>
+            <a href="#" id="home"><img src="<?= $themes ?>assets/images/thai/page5/home.png"alt="" class="btn-home"></a>
             <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" alt="" class="btn-exit"></a>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <a href="<?= site_url('GameLearningThai_controller/Thaigame/' . $this->data['ID']) ?>">
+            <a href="#" onclick="appendNoParam()">
                 <img src="<?= $themes ?>assets/images/thai/page5/btn-rule.png" alt="" class="btn-rule">
             </a>
         </div>
     </div>
 </div>
 
+<script>
+     function appendNoParam() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var level = window.location.pathname.split('/').pop();
+        var No = urlParams.get('No');
+        var url = "<?= site_url('GameLearningThai_controller/Thaigame/') ?>" + level + "?No=" + No;
+        window.location.href = url;
+    }
+
+    document.getElementById('home').addEventListener('click', function(event) {
+        var urlParams = new URLSearchParams(window.location.search);
+        var No = urlParams.get('No');
+        var url = "<?= site_url('GameLearningThai_controller/Level?No=') ?>" + No;
+        window.location.href = url;
+    });
+</script>
 
