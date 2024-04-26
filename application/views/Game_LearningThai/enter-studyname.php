@@ -63,12 +63,12 @@ body {
 
 .name {
     color: #754c24;
-    font-size: 52px;
+    font-size: 46px;
     font-family: "niramit-nm";
 }
 
 .btn-confirm {
-    margin-top: 2vh;
+    margin-top: 3vh;
     width: 23vh;
     height: 13vh;
     transition: transform 0.3s ease-in-out;
@@ -107,15 +107,26 @@ body {
             </div>
         </div>
     </form>
-    <div class="row">
-        <div class="col d-flex justify-content-center align-items-center" style="margin-top: 3vh">
-            <span class="name" id="fullname">ชื่อ - นามสกุล : <?= isset($this->data['FullName']) ? $this->data['FullName'] : '' ?></span>
+    <div class="row" style="margin-top: 3vh">
+        <div class="col-4"></div>
+        <div class="col-2 text-end" style="width: 28vh;">
+            <span class="name">ชื่อ - นามสกุล :</span>
         </div>
+        <div class="col-3">
+            <span class="name" id="fullname"><?= isset($this->data['FullName']) ? $this->data['FullName'] : '' ?></span>
+        </div>
+        <div class="col"></div>
     </div>
     <div class="row">
-        <div class="col d-flex justify-content-center align-items-center">
-            <span class="name" id="class">ชั้น : <?= isset($this->data['ClassYear']) ? $this->data['ClassYear'] : '' ?></span>
+        <div class="col-4"></div>
+        <div class="col-2 text-end" style="width: 28vh;">
+            <span class="name">ชั้น :</span>
         </div>
+        <div class="col-3">
+            <span class="name" id="class"><?= isset($this->data['ClassYear']) ? $this->data['ClassYear'] . '/' : '' ?></span>
+            <span class="name" id="room"><?= isset($this->data['Room']) ? $this->data['Room'] : '' ?></span>
+        </div>
+        <div class="col"></div>
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center align-items-center">
@@ -135,7 +146,7 @@ body {
                 <h5 class="modal-title fw-bold fs-3" id="exampleModalLongTitle">สืบค้นข้อมูล</h5>
             </div>
             <div class="modal-body tbodyDiv">
-                <table class="table table-bordered">
+                <table class="table">
                     <thead>
                         <tr class="text-center">
                             <th width="200px"><span class="fs-5">รหัสประจำตัว</span></th>
@@ -151,7 +162,7 @@ body {
                                 <td><span class="fs-4"><?= $row->FullName ?></span></td>
                                 <td class="text-center"><span class="fs-4"><?= $row->ClassYear ?></span></td>
                                 <td class="text-center">
-                                    <button class="btn btn-primary fw-bold fs-5" data-dismiss="modal" onclick="selectStudent('<?= $row->StudentNo ?>','<?= $row->FullName ?>','<?= $row->ClassYear ?>')">เลือก</button>
+                                    <button class="btn btn-primary fw-bold fs-5" data-dismiss="modal" onclick="selectStudent('<?= $row->StudentNo ?>','<?= $row->FullName ?>','<?= $row->ClassYear ?>','<?= $row->Room ?>')">เลือก</button>
                                 </td>
                             </tr>
                         <?php } ?>
@@ -166,23 +177,31 @@ body {
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
-function selectStudent(studentNo, FullName, ClassYear) {
+function selectStudent(studentNo, FullName, ClassYear, Room) {
     document.querySelector('.input-form').value = studentNo;
-    document.getElementById('fullname').innerText = 'ชื่อ - นามสกุล : ' + FullName;
-    document.getElementById('class').innerText = 'ชั้น : ' + ClassYear;
+    document.getElementById('fullname').innerText = FullName;
+    document.getElementById('class').innerText = ClassYear;
+    document.getElementById('room').innerText = '/' + Room;
 }
 
 document.getElementById('confirm').addEventListener('click', function(event) {
     var studentNo = document.getElementById('No').value;
+    
     if (studentNo === '') {
         alert('กรุณากรอกรหัสประจำตัวนักเรียน');
         event.preventDefault();
     } else {
-        var studentNo = document.getElementById('No').value;
-        var url = "<?= site_url('GameLearningThai_controller/Level?No=') ?>" + studentNo;
-        window.location.href = url;
+        var student = <?php echo json_encode($this->data['Student']); ?>; 
+        var found = student.find(function(item) {
+            return item.StudentNo === studentNo;
+        });
+
+        if (!found) {
+            alert('ไม่พบนักเรียน กรุณาตรวจสอบรหัสประจำตัวนักเรียน');
+        } else {
+            var url = "<?= site_url('GameLearningThai_controller/Level?No=') ?>" + studentNo;
+            window.location.href = url;
+        }
     }
 });
-
-
 </script>

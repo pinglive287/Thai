@@ -13,6 +13,18 @@ body {
     
 }
 
+.btn-home {
+    width: 10vh;
+    height: 10vh;
+    opacity: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.btn-home:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .btn-close {
     margin-right: 10px;
     width: 5vw;
@@ -73,6 +85,9 @@ img.choose.active {
 <div class="container-fluid">
     <div class="row justify-content-end align-items-end">
         <div class="col-auto">
+            <a href="<?= site_url('Learning_media_controller/media') ?>">
+                <img src="<?= $themes ?>assets/images/thai/page2/home.png" alt="" class="btn-home">
+            </a>
             <a href="#" onclick="window.close();">
                 <img src="<?= $themes ?>assets/images/thai/page2/close.png" alt="" class="btn-close">
             </a>

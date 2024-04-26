@@ -112,6 +112,7 @@ body {
     width: 90%;
     transform: translate(-50%, -50%);
     text-align: center;
+    line-height: 1.5;
 }
 
 .choice {
@@ -127,13 +128,15 @@ body {
 }
 
 .choice-text {
-    font-size: 46px;
+    font-size: 40px;
     cursor: pointer;
     top: 45%;
     left: 50%;
     width: 500px;
+    line-height: 1;
     transform: translate(-50%, -50%);
     position: absolute;
+    
 }
 
 .boat {
@@ -387,6 +390,8 @@ function Question() {
             var currentScore = parseInt(scoreElement.innerText.split('/')[0]);
             var urlParams = new URLSearchParams(window.location.search);
             var No = urlParams.get('No');
+            var level = "<?= $this->data['Level'] ?>";
+            Insert(currentScore, No, level);
             var url = "<?= site_url('GameLearningThai_controller/Score_summary/') ?>" + No + "?score=" + currentScore;
             window.location.href = url;
         } else {
@@ -557,4 +562,24 @@ document.getElementById('home').addEventListener('click', function(event) {
     var url = "<?= site_url('GameLearningThai_controller/Level?No=') ?>" + No;
     window.location.href = url;
 });
+
+
+function Insert(currentScore, No, level) {
+
+    let formData = new FormData();
+    formData.append('Score', currentScore);
+    formData.append('StudentNo', No);
+    formData.append('unit', level);
+
+    $.ajax({
+        url: "<?= site_url('GameLearningThai_controller/Insert_StudentScore') ?>",
+        type: "POST",
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(dataResult) { 
+
+        }
+    });
+}
 </script>

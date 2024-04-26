@@ -81,7 +81,7 @@ body {
     </div>
     <div class="row">
         <div class="col d-flex justify-content-center align-items-center">
-            <a href="<?= site_url('GameLearningThai_controller/Level') ?>" class="normal">บุคคลทั่วไป</a>
+            <a href="<?= site_url('GameLearningThai_controller/normal') ?>" class="normal">บุคคลทั่วไป</a>
         </div>
     </div>
 </div>

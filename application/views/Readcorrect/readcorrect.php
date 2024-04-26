@@ -38,12 +38,37 @@ body {
     height: 5vh;
 }
 
-.btn-exam {
-    width: 200px;
+.btn-allexam {
+    width: 400px;
+    top: 80%;
+    right: 10%;
+    position: absolute;
 }
 
-.btn-allexam {
-    width: 500px;
+.select {
+    display: block;
+    width: 80%;
+    padding: 1.5rem 3rem 1.5rem 2rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: "niramit";
+    line-height: 1.5;
+    color: #ababab;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ababab;
+    border-radius: 1.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.fnz-select {
+    font-size: 2rem;
+    font-family: "niramit";
 }
 
 @media (max-width: 768px) {
@@ -59,11 +84,6 @@ body {
     .btn-exit {
         width: 5vh;
         height: 5vh;
-    }
-
-    .btn-exam {
-        margin-top: 10vh;
-        width: 10vh;
     }
 
     .btn-allexam {
@@ -86,11 +106,6 @@ body {
         height: 4vh;
     }
 
-    .btn-exam {
-        margin-top: 5vh;
-        width: 6vh;
-    }
-
     .btn-allexam {
         width: 25vh;
     }
@@ -109,27 +124,26 @@ body {
                 </div>
             </div>
             <div class="row">
-                <div class="col d-flex justify-content-around top-150">
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/1') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-1.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/2') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-2.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/3') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-3.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/4') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-4.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/5') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-5.png" class="img-hover-effect btn-exam"></a>
+                <div class="col-3"></div>
+                <div class="col d-flex justify-content-around top-100">
+                    <select name="Exam" id="Exam" class="select" onchange="redirectToExam()">
+                        <option value="" class="fnz-select">เลือกชุด</option>
+                        <option value="1" class="fnz-select">ชุดที่ ๑</option>
+                        <option value="2" class="fnz-select">ชุดที่ ๒</option>
+                        <option value="3" class="fnz-select">ชุดที่ ๓</option>
+                        <option value="4" class="fnz-select">ชุดที่ ๔</option>
+                        <option value="5" class="fnz-select">ชุดที่ ๕</option>
+                        <option value="6" class="fnz-select">ชุดที่ ๖</option>
+                        <option value="7" class="fnz-select">ชุดที่ ๗</option>
+                        <option value="8" class="fnz-select">ชุดที่ ๘</option>
+                        <option value="9" class="fnz-select">ชุดที่ ๙</option>
+                        <option value="10" class="fnz-select">ชุดที่ ๑o</option>
+                    </select>
                 </div>
                 <div class="col-1"></div>
             </div>
             <div class="row">
-                <div class="col d-flex justify-content-around top-50">
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/6') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-6.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/7') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-7.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/8') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-8.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/9') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-9.png" class="img-hover-effect btn-exam"></a>
-                    <a href="<?= site_url('Readcorrectly_controller/Exam/10') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-10.png" class="img-hover-effect btn-exam"></a>
-                </div>
-                <div class="col-1"></div>
-            </div>
-            <div class="row">
-                <div class="col d-flex justify-content-center top-100">
+                <div class="col d-flex justify-content-center">
                     <a href="<?= site_url('Readcorrectly_controller/ExamTreasury') ?>"><img src="<?= $themes ?>assets/images/thai/page3/btn-allexam.png" class="img-hover-effect btn-allexam"></a>
                 </div>
                 <div class="col-1"></div>
@@ -137,3 +151,12 @@ body {
         </div>
     </div>
 </div>
+
+<script>
+    function redirectToExam() {
+        var selectedValue = document.getElementById("Exam").value;
+        if (selectedValue !== "") {
+            window.location.href = "<?= site_url('Readcorrectly_controller/Exam/') ?>" + selectedValue;
+        }
+    }
+</script>

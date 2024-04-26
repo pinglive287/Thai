@@ -77,7 +77,7 @@ body {
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-6">
-            <img src="<?= $themes ?>assets/images/thai/page5/stat.png" class="score-stat">
+            <img src="<?= $themes ?>assets/images/thai/page5/stat.png" class="score-stat" data-toggle="modal" data-target="#Stat">
         </div>
         <div class="col-md-6 text-end">
             <a href="#" onclick="window.close();"><img src="<?= $themes ?>assets/images/thai/page3/exit.png" alt="" class="btn-exit"></a>
@@ -133,6 +133,37 @@ body {
     </div>
 </div>
 
+<!-- modal -->
+<div class="modal fade" id="Stat" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold fs-3" id="exampleModalLongTitle">สถิติคะแนน</h5>
+            </div>
+            <div class="modal-body tbodyDiv">
+                <table class="table" id="tbl_Stat">
+                    <thead>
+                        <tr class="text-center">
+                            <th width="100px"><span class="fs-5">ลำดับ</span></th>
+                            <th width="150px"><span class="fs-5">รหัสนักเรียน</span></th>
+                            <th><span class="fs-5">ชื่อ - นามสกุล</span></th>
+                            <th width="150px"><span class="fs-5">แต้มสะสม</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary fs-5" data-dismiss="modal">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script>
      function appendNoParam(level) {
         var urlParams = new URLSearchParams(window.location.search);
@@ -140,5 +171,45 @@ body {
         var url = "<?= site_url('GameLearningThai_controller/rules/') ?>" + level + "?No=" + No;
         window.location.href = url;
     }
-   
+
+$(document).ready(function() {
+    var urlParams = new URLSearchParams(window.location.search);
+    var No = urlParams.get('No');
+    get_Stat(No);
+});
+
+function get_Stat(No) {
+    let table_body = $('#tbl_Stat tbody');
+
+    $.ajax({
+        url: "<?= site_url('GameLearningThai_controller/get_Stat') ?>",
+        method: "POST",
+        data: {
+            No: No
+        },
+        dataType: 'json',
+        success: function(data) {
+            table_body.html('');
+            if (data.length === 0) {
+                let table_row = `
+                    <tr>
+                        <td colspan="4" valign="middle" style="height:100px;" class="text-center fs-4"> ไม่พบข้อมูลสถิติ </td>
+                    </tr>`;
+                table_body.append(table_row);
+            } else {
+                count = 0;
+                $.each(data, function(index, row) {
+                    count++;
+                    let table_row = `<tr class="fs-4">
+                            <td>${count}</td>
+                            <td>${row.id_user || ''}</td>
+                            <td align="left">${row.FullName || ''}${row.Name || ''}</td>
+                            <td>${row.score || ''}</td>
+                        </tr>`;
+                    table_body.append(table_row);
+                });
+            }
+        }
+    });
+}
 </script>

@@ -20,9 +20,18 @@ class GameLearningThai_controller extends CI_Controller
 
     public function Level()
     {
+        $this->data['view_file'] = 'Game_LearningThai/level-thaigame';
 
         $this->data['view_file'] = 'Game_LearningThai/level-thaigame';
         $this->load->view(THEMES, $this->data);
+    }
+
+    public function get_Stat()
+    {
+        $No = $this->input->post('No');
+        $Stat = $this->GameLearningThai_model->get_Stat($No)->result();
+
+        echo json_encode($Stat);
     }
 
     public function study()
@@ -34,11 +43,20 @@ class GameLearningThai_controller extends CI_Controller
             $this->data['StudentNo'] = $row->StudentNo;
             $this->data['FullName'] = $row->FullName;
             $this->data['ClassYear'] = $row->ClassYear;
+            $this->data['Room'] = $row->Room;
         }
 
         $this->data['Student'] = $this->GameLearningThai_model->get_student()->result();
 
         $this->data['view_file'] = 'Game_LearningThai/enter-studyname';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function normal()
+    {
+        $this->data['User'] = $this->GameLearningThai_model->get_user()->result();
+
+        $this->data['view_file'] = 'Game_LearningThai/enter-normalname';
         $this->load->view(THEMES, $this->data);
     }
 
@@ -63,19 +81,30 @@ class GameLearningThai_controller extends CI_Controller
         $this->load->view(THEMES, $this->data);
     }
 
-    public function uploadfile()
+    public function Insert_StudentScore()
     {
-        $User_id = $this->session->userdata('LogUserID');
-        $this->data["Book"] = $this->UploadEbooks_model->get_Book($User_id)->result();
-        foreach($this->data["Book"] as $row){
-            $ID = $row->ID;
+        $Score = $this->input->post('Score');
+        $StudentNo = $this->input->post('StudentNo');
+        $unit = $this->input->post('unit');
+        
+        if (strlen($StudentNo) >= 13) {
+            $data = array(
+                'id_user' => $StudentNo,
+                'role' => 'บุคคลทั่วไป',
+                'id_game' => 1,
+                'unit' => $unit,
+                'score' => $Score,
+            );
+        } else {
+            $data = array(
+                'id_user' => $StudentNo,
+                'role' => 'นักเรียน',
+                'id_game' => 1,
+                'unit' => $unit,
+                'score' => $Score,
+            );
         }
-        $this->data["Bookid_file"] = $ID;
-        $this->data["NameBook"] = $this->UploadEbooks_model->get_NameBook()->result();
-        $this->data["Quiz"] = $this->UploadEbooks_model->get_Quiz($ID)->result();
-        $this->data["EditQuiz"] = $this->UploadEbooks_model->get_EditQuiz($ID)->result();
 
-        $this->data['view_file'] = 'uploadFile';
-        $this->load->view(THEMES, $this->data);
+        $this->GameLearningThai_model->Insert($data)->result();
     }
 }

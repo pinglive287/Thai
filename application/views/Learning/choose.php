@@ -27,7 +27,7 @@ body {
 }
 
 .btn-home {
-    width: 5vw;
+    width: 10vh;
     height: 10vh;
     opacity: 1;
     transition: transform 0.3s ease-in-out;

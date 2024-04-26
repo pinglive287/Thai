@@ -37,4 +37,19 @@ class Readcorrectly_controller extends CI_Controller
         $this->data['view_file'] = 'Readcorrect/treasuryID';
         $this->load->view(THEMES, $this->data);
     }
+
+    public function Explanation_Exam($ID)
+    {
+        $this->data['ID'] = $ID;
+
+        $this->data['view_file'] = 'Readcorrect/explanation-exam';
+        $this->load->view(THEMES, $this->data);
+    }
+
+    public function Rule_Exam($ID)
+    {
+        
+        $this->data['view_file'] = 'Readcorrect/rule_exam';
+        $this->load->view(THEMES, $this->data);
+    }
 }
